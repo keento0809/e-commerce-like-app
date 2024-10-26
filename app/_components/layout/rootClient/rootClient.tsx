@@ -1,16 +1,16 @@
 import { PropsWithChildren } from "react";
-import { Navbar } from "../../common/navbar/navbar";
 import { CartProvider } from "../../provider/cart-provider";
 import { ThemeProvider } from "../../provider/theme-provider";
 import { Toaster } from "../../ui/toaster";
 import { Footer } from "../../common/footer/footer";
+import { NavbarContainer } from "../../common/navbar";
 
 export const RootClient = ({ children }: PropsWithChildren) => {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <CartProvider>
         <div className="min-h-screen bg-background">
-          <Navbar />
+          <NavbarContainer />
           <main>{children}</main>
           <Toaster />
           <Footer />

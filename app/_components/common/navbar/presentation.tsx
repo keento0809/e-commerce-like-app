@@ -1,14 +1,9 @@
 "use client";
 
-import { ShoppingCart, Sun, Moon, Menu } from "lucide-react";
-import { useTheme } from "next-themes";
-
-import { useCart } from "../../provider/cart-provider";
-import { useEffect, useState } from "react";
 import Link from "next/link";
+import { Button } from "../../ui/button";
 import { SearchDialog } from "../../search/search-dialog";
 import { AuthDialog } from "../../auth/auth-dialog";
-import { Button } from "../../ui/button";
 import {
   Sheet,
   SheetContent,
@@ -16,17 +11,20 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/app/_components/ui/sheet";
+} from "../../ui/sheet";
+import { Menu, Moon, ShoppingCart, Sun } from "lucide-react";
+import { useNavbar } from "./_hooks/useNavbar";
 
-export function Navbar() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  const { items } = useCart();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const totalItems = items.reduce((acc, item) => acc + item.quantity, 0);
-
-  useEffect(() => setMounted(true), []);
+export const NavbarPresentation = () => {
+  const {
+    mounted,
+    theme,
+    isMenuOpen,
+    setIsMenuOpen,
+    items,
+    totalItems,
+    toggleTheme,
+  } = useNavbar();
 
   return (
     <nav className="border-b">
@@ -53,11 +51,7 @@ export function Navbar() {
           <div className="flex items-center space-x-4">
             <SearchDialog />
 
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            >
+            <Button variant="ghost" size="icon" onClick={toggleTheme}>
               {mounted && theme === "dark" ? (
                 <Sun className="h-5 w-5" />
               ) : (
@@ -157,4 +151,4 @@ export function Navbar() {
       </div>
     </nav>
   );
-}
+};
