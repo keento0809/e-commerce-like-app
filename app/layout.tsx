@@ -1,16 +1,16 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
-import { Navbar } from '@/components/navbar';
-import { Toaster } from '@/components/ui/toaster';
-import { CartProvider } from '@/components/cart-provider';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "./_components/theme-provider";
+import { CartProvider } from "./_components/cart-provider";
+import { Navbar } from "./_components/navbar";
+import { Toaster } from "./_components/ui/toaster";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Modern Store',
-  description: 'Your premium shopping destination',
+  title: "Modern Store",
+  description: "Your premium shopping destination",
 };
 
 export default function RootLayout({

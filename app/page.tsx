@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "./_components/ui/button";
 
 export default function Home() {
   return (
@@ -20,8 +20,8 @@ export default function Home() {
             Welcome to ModernStore
           </h1>
           <p className="mt-6 text-lg sm:text-xl max-w-3xl mx-auto">
-            Discover our curated collection of premium products designed to enhance
-            your lifestyle
+            Discover our curated collection of premium products designed to
+            enhance your lifestyle
           </p>
           <div className="mt-10">
             <Button asChild size="lg" className="rounded-full">
@@ -39,22 +39,22 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Electronics',
+                title: "Electronics",
                 image:
-                  'https://images.unsplash.com/photo-1498049794561-7780e7231661',
-                description: 'Latest gadgets and tech accessories',
+                  "https://images.unsplash.com/photo-1498049794561-7780e7231661",
+                description: "Latest gadgets and tech accessories",
               },
               {
-                title: 'Fashion',
+                title: "Fashion",
                 image:
-                  'https://images.unsplash.com/photo-1445205170230-053b83016050',
-                description: 'Trendy clothing and accessories',
+                  "https://images.unsplash.com/photo-1445205170230-053b83016050",
+                description: "Trendy clothing and accessories",
               },
               {
-                title: 'Home & Living',
+                title: "Home & Living",
                 image:
-                  'https://images.unsplash.com/photo-1484101403633-562f891dc89a',
-                description: 'Beautiful home decor and furnishings',
+                  "https://images.unsplash.com/photo-1484101403633-562f891dc89a",
+                description: "Beautiful home decor and furnishings",
               },
             ].map((category) => (
               <div
@@ -88,19 +88,19 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Premium Quality',
+                title: "Premium Quality",
                 description:
-                  'Carefully selected products that meet our high standards',
+                  "Carefully selected products that meet our high standards",
               },
               {
-                title: 'Fast Shipping',
+                title: "Fast Shipping",
                 description:
-                  'Quick and reliable delivery to your doorstep worldwide',
+                  "Quick and reliable delivery to your doorstep worldwide",
               },
               {
-                title: '24/7 Support',
+                title: "24/7 Support",
                 description:
-                  'Our dedicated team is here to help you anytime, anywhere',
+                  "Our dedicated team is here to help you anytime, anywhere",
               },
             ].map((feature) => (
               <div
