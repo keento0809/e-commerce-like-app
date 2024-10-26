@@ -4,7 +4,7 @@ import { ShoppingCart, Sun, Moon, Menu } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { useCart } from "../../provider/cart-provider";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { SearchDialog } from "../../search/search-dialog";
 import { AuthDialog } from "../../auth/auth-dialog";
@@ -16,14 +16,17 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "../../ui/sheet";
+} from "@/app/_components/ui/sheet";
 
 export function Navbar() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const { items } = useCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const totalItems = items.reduce((acc, item) => acc + item.quantity, 0);
+
+  useEffect(() => setMounted(true), []);
 
   return (
     <nav className="border-b">
@@ -55,7 +58,7 @@ export function Navbar() {
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             >
-              {theme === "dark" ? (
+              {mounted && theme === "dark" ? (
                 <Sun className="h-5 w-5" />
               ) : (
                 <Moon className="h-5 w-5" />
