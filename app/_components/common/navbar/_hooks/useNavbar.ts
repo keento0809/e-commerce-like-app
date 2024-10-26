@@ -1,4 +1,4 @@
-import { useCart } from "@/app/_components/provider/cart-provider";
+import { useCart } from "@/app/_components/providers/cartProvider/cartProvider";
 import { useTheme } from "next-themes";
 import { useEffect, useMemo, useState } from "react";
 

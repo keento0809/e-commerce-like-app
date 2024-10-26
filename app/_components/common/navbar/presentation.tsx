@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 import { Button } from "../../ui/button";
-import { SearchDialog } from "../../search/search-dialog";
-import { AuthDialog } from "../../auth/auth-dialog";
 import {
   Sheet,
   SheetContent,
@@ -14,6 +12,8 @@ import {
 } from "../../ui/sheet";
 import { Menu, Moon, ShoppingCart, Sun } from "lucide-react";
 import { useNavbar } from "./_hooks/useNavbar";
+import { SearchDialog } from "../dialogs/searchDialog/searchDialog";
+import { AuthDialog } from "../dialogs/authDialog/authDialog";
 
 export const NavbarPresentation = () => {
   const {
