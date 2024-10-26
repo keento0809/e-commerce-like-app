@@ -3,12 +3,12 @@
 import { ShoppingCart, Sun, Moon, Menu } from "lucide-react";
 import { useTheme } from "next-themes";
 
-import { useCart } from "./cart-provider";
+import { useCart } from "../../provider/cart-provider";
 import { useState } from "react";
 import Link from "next/link";
-import { SearchDialog } from "./search/search-dialog";
-import { AuthDialog } from "./auth/auth-dialog";
-import { Button } from "./ui/button";
+import { SearchDialog } from "../../search/search-dialog";
+import { AuthDialog } from "../../auth/auth-dialog";
+import { Button } from "../../ui/button";
 import {
   Sheet,
   SheetContent,
@@ -16,7 +16,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "./ui/sheet";
+} from "../../ui/sheet";
 
 export function Navbar() {
   const { theme, setTheme } = useTheme();
