@@ -2,16 +2,16 @@
 
 import { useState } from "react";
 import { Search } from "lucide-react";
-import { SearchResults } from "./search-results";
+import { SearchResults } from "./searchResults";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../ui/dialog";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
+} from "../../../ui/dialog";
+import { Button } from "../../../ui/button";
+import { Input } from "../../../ui/input";
 
 export function SearchDialog() {
   const [query, setQuery] = useState("");

@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 
-import { LoginForm } from "./login-form";
-import { SignUpForm } from "./signup-form";
-import { Button } from "../ui/button";
+import { Button } from "../../../ui/button";
 import {
   Dialog,
   DialogContent,
@@ -12,7 +10,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../ui/dialog";
+} from "../../../ui/dialog";
+import { LoginForm } from "../../forms/loginForm/loginForm";
+import { SignUpForm } from "../../forms/signupForm/signupForm";
 
 export function AuthDialog() {
   const [isLogin, setIsLogin] = useState(true);

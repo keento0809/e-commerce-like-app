@@ -1,9 +1,9 @@
 import { PropsWithChildren } from "react";
-import { CartProvider } from "../../provider/cart-provider";
-import { ThemeProvider } from "../../provider/theme-provider";
+import { ThemeProvider } from "../../providers/themeProvider/themeProvider";
 import { Toaster } from "../../ui/toaster";
 import { Footer } from "../../common/footer/footer";
 import { NavbarContainer } from "../../common/navbar";
+import { CartProvider } from "../../providers/cartProvider/cartProvider";
 
 export const RootClient = ({ children }: PropsWithChildren) => {
   return (

@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 import { Button } from "../../ui/button";
-import { SearchDialog } from "../../search/search-dialog";
-import { AuthDialog } from "../../auth/auth-dialog";
 import {
   Sheet,
   SheetContent,
@@ -14,6 +12,8 @@ import {
 } from "../../ui/sheet";
 import { Menu, Moon, ShoppingCart, Sun } from "lucide-react";
 import { useNavbar } from "./_hooks/useNavbar";
+import { SearchDialog } from "../dialogs/searchDialog/searchDialog";
+import { AuthDialog } from "../dialogs/authDialog/authDialog";
 
 export const NavbarPresentation = () => {
   const {
@@ -28,10 +28,10 @@ export const NavbarPresentation = () => {
 
   return (
     <nav className="border-b">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold">
+            <Link href="/" className="text-lg md:text-2xl font-bold">
               ModernStore
             </Link>
           </div>
@@ -48,18 +48,19 @@ export const NavbarPresentation = () => {
             </Link>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <SearchDialog />
+          <div className="items-center space-x-2 md:space-x-4 md:flex">
+            <div className="hidden md:inline-block">
+              <SearchDialog />
+              <Button variant="ghost" size="icon" onClick={toggleTheme}>
+                {mounted && theme === "dark" ? (
+                  <Sun className="h-5 w-5" />
+                ) : (
+                  <Moon className="h-5 w-5" />
+                )}
+              </Button>
 
-            <Button variant="ghost" size="icon" onClick={toggleTheme}>
-              {mounted && theme === "dark" ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </Button>
-
-            <AuthDialog />
+              <AuthDialog />
+            </div>
 
             <Sheet>
               <SheetTrigger asChild>
