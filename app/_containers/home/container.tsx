@@ -1,9 +1,6 @@
 import { HomePresentation } from "./presentation";
 
 export const HomeContainer = () => {
-  return (
-    <HomePresentation>
-      <div>Home Presentation</div>
-    </HomePresentation>
-  );
+  // Add components as the composition if it's necessary
+  return <HomePresentation></HomePresentation>;
 };
