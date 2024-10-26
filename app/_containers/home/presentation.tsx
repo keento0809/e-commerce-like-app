@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC, PropsWithChildren } from "react";
 import { HOME_TEXT_OBJ } from "@/app/_constants/home/texts";
-import { HOME_EXTERNAL_URLS_OBJ } from "@/app/_constants/home/externalURLs";
+import heroImgURL from "@/public/images/home/hero_img_size_reduced.jpeg";
 
 type HomePresentationProps = PropsWithChildren;
 
@@ -14,7 +14,7 @@ export const HomePresentation: FC<HomePresentationProps> = ({ children }) => {
       <section className="relative h-[600px] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src={HOME_EXTERNAL_URLS_OBJ["heroImgURL"]}
+            src={heroImgURL.src}
             alt="Hero background"
             fill
             className="object-cover brightness-50"
